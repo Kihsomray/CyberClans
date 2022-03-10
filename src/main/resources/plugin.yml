@@ -1,0 +1,8 @@
+name: CyberClans
+version: '${project.version}'
+main: net.zerotoil.dev.cyberclans.CyberClans
+api-version: 1.16
+prefix: CCN
+authors: [ Kihsomray, Faln ]
+description: Advanced clans system for SpigotMC
+website: dev.zerotoil.net
