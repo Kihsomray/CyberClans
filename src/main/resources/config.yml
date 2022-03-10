@@ -1,0 +1,8 @@
+config:
+
+  # updates the config every time you update. Prior strings will
+  # remain the same! NOTE: disabling this will leave new settings
+  # as default and new lang string won't send.
+  auto-update-configs:
+    config: true
+    lang: true

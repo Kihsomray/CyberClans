@@ -1,0 +1,25 @@
+messages:
+  prefix: '&e&lCyber&f&lClans &8»&r'
+  no-permission: '<p> &cYou don''t have permission to do that!'
+  help-player:
+    - '<c> &8&m―――――――&8<&e&l Cyber&f&lClans &8>&8&m―――――――'
+    - '      &8➼ &e/clv about &fAbout the plugin.'
+    - '      &8➼ &e/clv help &fSee the help menu.'
+    - '      &8➼ &e/clv info &fSee level progress.'
+    - '<c> &8&m――――――――――――――――――――――――――――――――'
+  help-admin:
+    - '<c> &8&m―――――――&8<&e&l Cyber&f&lClans &8>&8&m―――――――'
+    - '      &8➼ &e/clv about &fAbout the plugin.'
+    - '      &8➼ &e/clv help &fSee the help menu.'
+    - '      &8➼ &e/clv reload &fReload the plugin.'
+    - '      &8➼ &e/clv info [<player>] &fSee level progress.'
+    - '      &8➼ &e/clv addEXP <amount> [<player>] &fIncrease a player''s EXP balance.'
+    - '      &8➼ &e/clv setEXP <amount> [<player>] &fSet a player''s EXP balance.'
+    - '      &8➼ &e/clv removeEXP <amount> [<player>] &fDecrease a player''s EXP balance.'
+    - '      &8➼ &e/clv addLevel <amount> [<player>] &fIncrease a player''s level.'
+    - '      &8➼ &e/clv setLevel <amount> [<player>] &fSet a player''s level.'
+    - '      &8➼ &e/clv removeLevel <amount> [<player>] &fDecrease a player''s level.'
+    - '<c> &8&m――――――――――――――――――――――――――――――――'
+
+  reloading: '<p> &7Reloading...'
+  reloaded: '<p> &aReloaded!'
