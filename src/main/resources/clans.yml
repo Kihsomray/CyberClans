@@ -32,7 +32,8 @@ clan-types:
     inherit-permissions: true
 
     ranks:
-      leader:
+      # Every clan MUST have an owner and member rank.
+      OWNER:
         display: '&4Leader'
         priority: 999
         permissions:
@@ -42,7 +43,7 @@ clan-types:
           - 'demote:bypass'
           - 'disband'
 
-      co-leader:
+      CO-LEADER:
         display: '&cCo-leader'
         priority: 998
         permissions:
@@ -50,13 +51,13 @@ clan-types:
           - 'promote:bypass'
           - 'demote'
 
-      elder:
+      ELDER:
         display: '&bElder'
         priority: 1
         permissions:
           - 'kick'
 
-      member:
+      MEMBER:
         display: '&7Member'
         priority: 0
         permissions: []
