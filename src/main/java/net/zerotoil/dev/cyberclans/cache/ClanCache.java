@@ -1,6 +1,7 @@
-package net.zerotoil.dev.cyberclans.objects;
+package net.zerotoil.dev.cyberclans.cache;
 
 import net.zerotoil.dev.cyberclans.CyberClans;
+import net.zerotoil.dev.cyberclans.objects.Clan;
 
 import java.util.HashMap;
 import java.util.Map;
