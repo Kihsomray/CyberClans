@@ -1,45 +1,50 @@
 package net.zerotoil.dev.cyberclans.objects;
 
 import me.croabeast.beanslib.utilities.TextUtils;
+import net.zerotoil.dev.cyberclans.CyberClans;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashSet;
+import java.util.*;
 
 public class Clan {
 
-    private final ClanMember owner;
-    private final HashSet<ClanMember> clanMembers = new HashSet<>();
+    private final CyberClans main;
+    private final ClanType type;
+
+    private final OfflinePlayer ownerPlayer;
+    private final ClanMember ownerMember;
+    private final Map<OfflinePlayer, ClanMember> clanMembers = new HashMap<>();
 
     private int id;
-    private static int counter = 0;
     private String name;
-    private Date creationDate;
-    private int memberSize = 1;
+    private final long creationTime;
 
-    public Clan(ClanMember owner) {
 
-        id = counter;
-        this.owner = owner;
-        new SimpleDateFormat().format(creationDate = new Date());
-        counter++;
+    public Clan(CyberClans main, OfflinePlayer owner, ClanType type, long creationTime) {
+
+        this.main = main;
+        this.ownerPlayer = owner;
+        this.ownerMember = new ClanMember(owner);
+        this.type = type;
+        this.creationTime = creationTime;
 
     }
 
-    public Clan addMember(Player sender, ClanMember player) {
-        if (clanMembers.contains(player)) {
-            sender.sendMessage(TextUtils.colorize(sender, "clan already contains member message"));
+    public Clan addMember(Player sender, OfflinePlayer player) {
+        if (clanMembers.containsKey(player)) {
+            // todo message: clan already contains member message
             return this;
         }
-        clanMembers.add(player);
+        clanMembers.put(player, new ClanMember(player));
         return this;
     }
 
-    public Clan removeMember(Player sender, ClanMember player) {
-        if (!clanMembers.contains(player)) {
-            sender.sendMessage(TextUtils.colorize(sender, "your clan does not contain that player message"));
+    public Clan removeMember(Player sender, OfflinePlayer player) {
+        if (!clanMembers.containsKey(player)) {
+            // todo message: your clan does not contain that player message
             return this;
         }
         clanMembers.remove(player);
@@ -51,11 +56,11 @@ public class Clan {
     }
 
     public int getMemberSize() {
-        return memberSize;
+        return clanMembers.size() + 1;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public String getCreationDate() {
+        return new Date(creationTime).toString();
     }
 
     public Clan setName(String name) {
@@ -63,15 +68,18 @@ public class Clan {
         return this;
     }
 
-
-    public Clan setMemberSize(int size) {
-        this.memberSize = size;
-        return this;
+    // todo check if owner
+    public boolean isMember(OfflinePlayer player) {
+        if (clanMembers.containsKey(player)) return true;
+        return false;
     }
 
-    public Clan setCreationDate(Date date) {
-        this.creationDate = date;
-        return this;
+    // todo finish this
+    public boolean promote(OfflinePlayer player, ClanRank rank) {
+
+        clanMembers.get(player).promote(rank);
+        return false;
     }
+
 
 }

@@ -25,7 +25,6 @@ public class ClanType {
         this.type = type;
     }
 
-
     public String getType() {
         return type;
     }

@@ -25,8 +25,8 @@ public class ClanRank {
                 .getConfigurationSection("clan-types." + type.getType() + ".ranks." + rank);
         if (section == null) return;
 
-        displayName = section.getString("display");
-        priority = section.getInt("priority");
+        displayName = section.getString("display", displayName);
+        priority = section.getInt("priority", priority);
         for (String s : section.getStringList("permissions")) {
 
             if (s.contains(":")) {
