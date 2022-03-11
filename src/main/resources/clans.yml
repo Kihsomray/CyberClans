@@ -1,0 +1,63 @@
+clan-types:
+
+  # Name of clan type
+  default:
+
+    # The display name when a clan is first created.
+    default-display: '&7{players}''s Clan'
+
+    # Maximum players in a clan.
+    maximum-players: 100
+
+    # Cost to create this type of clan.
+    creation-cost: 1000
+
+    # What permission is required to make this clan?
+    creation-permission: 'clans.create.default'
+
+    # Cool down in seconds between kicking all players.
+    kick-all-cooldown: 3600
+
+    # Cool down in seconds between kicking a player.
+    kick-cooldown: 360
+
+    # Cool down in seconds between promotions.
+    promote-cooldown: 0
+
+    # Cool down in seconds between demotions.
+    demote-cooldown: 30
+
+    # Should roles with higher priority inherit rank permissions
+    # from those with a lesser priority?
+    inherit-permissions: true
+
+    ranks:
+      leader:
+        display: '&4Leader'
+        priority: 999
+        permissions:
+          - 'kick-all:bypass'
+          - 'kick:bypass'
+          - 'promote:bypass'
+          - 'demote:bypass'
+          - 'disband'
+
+      co-leader:
+        display: '&cCo-leader'
+        priority: 998
+        permissions:
+          - 'kick:bypass'
+          - 'promote:bypass'
+          - 'demote'
+
+      elder:
+        display: '&bElder'
+        priority: 1
+        permissions:
+          - 'kick'
+
+      member:
+        display: '&7Member'
+        priority: 0
+        permissions: []
+

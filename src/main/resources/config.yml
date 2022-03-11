@@ -1,5 +1,11 @@
 config:
 
+  # Time between clan creations
+  clan-creation-cooldown: 3600
+
+  # Time between leaving a clan and joining a new one
+  clan-swap-cooldown: 120
+
   # updates the config every time you update. Prior strings will
   # remain the same! NOTE: disabling this will leave new settings
   # as default and new lang string won't send.

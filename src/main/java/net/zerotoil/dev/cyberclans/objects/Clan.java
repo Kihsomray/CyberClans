@@ -10,17 +10,21 @@ import java.util.HashSet;
 
 public class Clan {
 
+    private final ClanMember owner;
     private final HashSet<ClanMember> clanMembers = new HashSet<>();
 
+    private int id;
+    private static int counter = 0;
     private String name;
-    private String ownerUUID;
     private Date creationDate;
     private int memberSize = 1;
-    private int memberMaxSize = 99;
 
-    public Clan() {
+    public Clan(ClanMember owner) {
 
+        id = counter;
+        this.owner = owner;
         new SimpleDateFormat().format(creationDate = new Date());
+        counter++;
 
     }
 
@@ -46,16 +50,8 @@ public class Clan {
         return name;
     }
 
-    public String getOwner() {
-        return ownerUUID;
-    }
-
     public int getMemberSize() {
         return memberSize;
-    }
-
-    public int getMemberMaxSize() {
-        return memberMaxSize;
     }
 
     public Date getCreationDate() {
@@ -67,18 +63,9 @@ public class Clan {
         return this;
     }
 
-    public Clan setOwner(String ownerUUID) {
-        this.ownerUUID = ownerUUID;
-        return this;
-    }
 
     public Clan setMemberSize(int size) {
         this.memberSize = size;
-        return this;
-    }
-
-    public Clan setMemberMaxSize(int size) {
-        this.memberMaxSize = size;
         return this;
     }
 
