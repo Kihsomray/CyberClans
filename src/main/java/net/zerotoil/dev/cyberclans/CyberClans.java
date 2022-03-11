@@ -3,7 +3,7 @@ package net.zerotoil.dev.cyberclans;
 import me.croabeast.beanslib.BeansLib;
 import me.croabeast.beanslib.utilities.LogUtils;
 import me.croabeast.beanslib.utilities.TextUtils;
-import net.zerotoil.dev.cyberclans.commands.CCNCommand;
+import net.zerotoil.dev.cyberclans.commands.CCNAdminCmds;
 import net.zerotoil.dev.cyberclans.objects.files.Files;
 import net.zerotoil.dev.cyberclans.utilities.LangUtils;
 import org.bukkit.Bukkit;
@@ -23,7 +23,7 @@ public final class CyberClans extends JavaPlugin {
         initBeansLib(); // after files
         langUtils = new LangUtils(this);
 
-        new CCNCommand(this);
+        new CCNAdminCmds(this);
 
         reloadClasses(true);
 

@@ -1,12 +1,9 @@
 package net.zerotoil.dev.cyberclans.objects;
 
-import me.croabeast.beanslib.utilities.TextUtils;
 import net.zerotoil.dev.cyberclans.CyberClans;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Clan {
@@ -35,7 +32,7 @@ public class Clan {
 
     public Clan addMember(Player sender, OfflinePlayer player) {
         if (clanMembers.containsKey(player)) {
-            // todo message: clan already contains member message
+            main.langUtils().sendMessage(sender, "already-in-clan");
             return this;
         }
         clanMembers.put(player, new ClanMember(player));
@@ -44,7 +41,7 @@ public class Clan {
 
     public Clan removeMember(Player sender, OfflinePlayer player) {
         if (!clanMembers.containsKey(player)) {
-            // todo message: your clan does not contain that player message
+            main.langUtils().sendMessage(sender, "not-in-clan");
             return this;
         }
         clanMembers.remove(player);

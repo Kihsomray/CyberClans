@@ -39,9 +39,26 @@ public class ClanRank {
 
         }
 
-
-
     }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+
+    public ClanRank setDisplayName(String name) {
+        this.displayName = name;
+        return this;
+    }
+
+    public ClanRank setPriority(int priority) {
+        this.priority = priority;
+        return this;
+    }
+
 
 
 }

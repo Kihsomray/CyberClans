@@ -23,3 +23,5 @@ messages:
 
   reloading: '<p> &7Reloading...'
   reloaded: '<p> &aReloaded!'
+  already-in-clan: '<p> &cThis player is already in your clan.'
+  not-in-clan: '<p> &cThis player is not in your clan.'
