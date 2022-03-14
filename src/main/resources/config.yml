@@ -6,6 +6,12 @@ config:
   # Time between leaving a clan and joining a new one
   clan-swap-cooldown: 120
 
+  # Clan names that players will not be able to use
+  clan-names-blacklist:
+    - 'badword'
+    - 'bitch'
+    - 'fuck'
+
   # updates the config every time you update. Prior strings will
   # remain the same! NOTE: disabling this will leave new settings
   # as default and new lang string won't send.

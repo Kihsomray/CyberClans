@@ -3,6 +3,8 @@ package net.zerotoil.dev.cyberclans;
 import me.croabeast.beanslib.BeansLib;
 import me.croabeast.beanslib.utilities.LogUtils;
 import me.croabeast.beanslib.utilities.TextUtils;
+import net.zerotoil.dev.cyberclans.cache.ClanCache;
+import net.zerotoil.dev.cyberclans.cache.ConfigCache;
 import net.zerotoil.dev.cyberclans.commands.CCNAdminCmds;
 import net.zerotoil.dev.cyberclans.objects.files.Files;
 import net.zerotoil.dev.cyberclans.utilities.LangUtils;
@@ -15,6 +17,8 @@ public final class CyberClans extends JavaPlugin {
 
     private Files files;
     private LangUtils langUtils;
+    private ClanCache clanCache;
+    private ConfigCache configCache;
 
     @Override
     public void onEnable() {
@@ -22,6 +26,9 @@ public final class CyberClans extends JavaPlugin {
         files = new Files(this);
         initBeansLib(); // after files
         langUtils = new LangUtils(this);
+
+        clanCache = new ClanCache(this);
+        configCache = new ConfigCache(this);
 
         new CCNAdminCmds(this);
 
@@ -69,5 +76,7 @@ public final class CyberClans extends JavaPlugin {
     public LangUtils langUtils() {
         return langUtils;
     }
+    public ClanCache clanCache() { return clanCache; }
+    public ConfigCache configCache() { return configCache; }
 
 }

@@ -31,6 +31,20 @@ public class Clan {
 
     }
 
+    public boolean isOwner(OfflinePlayer player) {
+        return ownerPlayer.equals(player);
+    }
+
+    public boolean isMember(OfflinePlayer player) {
+        return clanMembers.containsKey(player) || isOwner(player);
+    }
+
+    // todo finish this
+    public boolean promote(OfflinePlayer player, ClanRank rank) {
+        clanMembers.get(player).promote(rank);
+        return true;
+    }
+
     public Clan setOwner(OfflinePlayer player) {
         this.ownerPlayer = player;
         this.ownerMember = new ClanMember(player, type, true);
@@ -69,14 +83,6 @@ public class Clan {
     }
     public String getCreationDate() {
         return new Date(creationTime).toString();
-    }
-    public boolean isMember(OfflinePlayer player) {
-        return clanMembers.containsKey(player) || ownerPlayer.equals(player);
-    }
-    // todo finish this
-    public boolean promote(OfflinePlayer player, ClanRank rank) {
-        clanMembers.get(player).promote(rank);
-        return true;
     }
     public String getName() {
         //if (name == null) return type;
