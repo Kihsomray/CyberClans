@@ -47,7 +47,7 @@ public class Clan {
 
     public Clan setOwner(OfflinePlayer player) {
         this.ownerPlayer = player;
-        this.ownerMember = new ClanMember(player, type, true);
+        this.ownerMember = new ClanMember(player, type, true).setClan(name);
         return this;
     }
 
@@ -60,7 +60,7 @@ public class Clan {
     }
 
     public Clan addMember(OfflinePlayer player) {
-        clanMembers.put(player, new ClanMember(player, type));
+        clanMembers.put(player, new ClanMember(player, type).setClan(name));
         return this;
     }
 

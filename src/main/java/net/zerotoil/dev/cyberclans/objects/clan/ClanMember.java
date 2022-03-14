@@ -9,6 +9,7 @@ public class ClanMember {
 
     private final OfflinePlayer player;
     private final ClanType clanType;
+    private String clan = null;
 
     private final List<ClanRank> ranks = new ArrayList<>();
 
@@ -41,11 +42,19 @@ public class ClanMember {
         return false;
     }
 
+    public ClanMember setClan(String clan) {
+        this.clan = clan;
+        return this;
+    }
+
     public OfflinePlayer getPlayer() {
         return player;
     }
     public ClanType getClanType() {
         return clanType;
+    }
+    public String getClan() {
+        return clan;
     }
     public List<ClanRank> getRanks() {
         return ranks;
